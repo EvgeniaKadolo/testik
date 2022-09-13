@@ -1,11 +1,13 @@
 <?php
 abstract class Animal
 {
-    private static $id = 0;
+    private static $countId = 0;
+    private $id;
 
     function __construct()
     {
-        self::$id++;
+        $this->id = self::$countId;
+        self::$countId++;
     }
 
     /**
@@ -15,7 +17,7 @@ abstract class Animal
      */
     public function getId(): int
     {
-        return self::$id;
+        return $this->id;
     }
 
     /**
